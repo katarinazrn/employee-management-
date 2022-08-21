@@ -1,0 +1,22 @@
+nav {
+    height: 100vh;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    nav {
+        height: auto;
+    }
+}
+
+.logo {
+    font-weight: 900 !important;
+}
+
+.list-group li:hover {
+    background-color: whitesmoke;
+}
+
+.list-group li:hover a {
+    color: black !important;
+}
