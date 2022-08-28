@@ -26,13 +26,17 @@ export const addEmployee = (newEmployee, formData) => {
             headers: {
                 'Access-Control-Allow-Origin': '*'
             }
-        }).then(res => {
-            let type = res.status === 201 ? 'addEmployee' : '';
-            return dispatch({
-                type: type,
-                payload: newEmployee
-            })
         })
+            .then(res => res.json())
+            .then(data => {
+                let type = data.id ? 'addEmployee' : '';
+                console.log(type, '**********************************')
+                newEmployee.id = data.id;
+                return dispatch({
+                    type: type,
+                    payload: newEmployee
+                })
+            })
     }
 }
 

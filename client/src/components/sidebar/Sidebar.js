@@ -10,9 +10,9 @@ function Sidebar() {
     }
 
     return (
-        <nav className='position-fixed col-sm-12 col-md-3 bg-dark d-flex flex-column shadow-sm' >
+        <nav test-dataid='sidebar' className='position-fixed col-sm-12 col-md-3 bg-dark d-flex flex-column shadow-sm' >
             <div className="d-flex justify-content-between">
-                <Link to='/' className="logo text-light p-1 p-md-2 h4 text-left text-decoration-none">Employees management</Link>
+                <Link to='/' className="logo text-light p-1 p-md-2 h4 text-left text-decoration-none">Employee management</Link>
                 <button onClick={toggleMenu} className="d-block d-md-none border-0 bg-transparent material-icons text-light ">menu</button>
             </div>
             <ul className={`list-group m-0 p-0 mt-md-5 flex-column d-md-flex ${showMobileMenu || showMobileMenu == null ? 'd-none' : ''}`}>

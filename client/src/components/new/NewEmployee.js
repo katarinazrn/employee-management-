@@ -33,6 +33,9 @@ function NewEmployee() {
         const startDate = startDateRef.current.value;
         const endDate = endDateRef?.current?.value;
         const status = isEmployed ? 'active' : 'past';
+        const extension = image ? image.name.split('.').pop() : '';
+        const profilePicture = image ? `profilePicture.${extension}` : null;
+
 
         formData.append('firstName', firstName);
         formData.append('lastName', lastName);
@@ -43,7 +46,8 @@ function NewEmployee() {
         formData.append('endDate', startDate);
         formData.append('status', status);
 
-        addEmployee({ firstName, lastName, phone, email, jobName, status, startDate, endDate }, formData);
+
+        addEmployee({ firstName, lastName, phone, email, jobName, status, startDate, endDate, profilePicture }, formData);
         navigate('/employees/all');
     }
 
@@ -52,7 +56,7 @@ function NewEmployee() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form data-testid='new' onSubmit={handleSubmit}>
             <div className="form-group mt-2">
                 <label htmlFor="firstName">First Name</label>
                 <input required className="form-control" ref={firstNameRef} id="firstName" type='text' ></input>

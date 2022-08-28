@@ -6,7 +6,6 @@ const reducer = (state = { employees: [] }, action) => {
         case 'addEmployee':
             newState = { ...state };
             newState.employees.push(action.payload);
-            console.log(newState)
             return newState;
         case 'removeEmployee':
             newState = { ...state };

@@ -49,8 +49,9 @@ const saveEmployee = async (req, res) => {
           fs.writeFile(newpath, data, function (erro) {
             if (erro)
               console.log("error : " + erro);
-            else
-              res.sendStatus(201);
+            else {
+              res.send({ id });
+            }
           });
         }
       });

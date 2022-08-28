@@ -58,7 +58,7 @@ function EmployeeDetails() {
             </div>
             <Employment employee={employee} />
             <Contact employee={employee} />
-            <DeleteModal show={showModal} deleteProfile={deleteProfile} onHideModal={onHideModal} employee={employee} />
+            <DeleteModal show={showModal} deleteProfile={deleteProfile} onHideModal={onHideModal} />
         </ContentLayout>
     )
 }

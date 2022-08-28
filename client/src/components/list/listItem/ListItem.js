@@ -5,9 +5,9 @@ function ListItem({ employee }) {
 
     return (
         <li className="list-group-item d-flex justify-content-between" key={employee.id}>
-
             <Link to={`/employee/${employee.id}`} className='d-flex text-capitalize text-decoration-none text-dark'>
                 <div className="image-round d-flex justify-content-center m-1"
+                    data-testid='profilePicture'
                     style={{ backgroundImage: employee.profilePicture ? `url(http://localhost:3005/${employee.id}/${employee.profilePicture})` : 'url("/placeholder.png")' }} ></div>
                 <strong className=' ms-3 mt-auto mb-auto'>{employee.firstName} {employee.lastName}</strong>
             </Link>

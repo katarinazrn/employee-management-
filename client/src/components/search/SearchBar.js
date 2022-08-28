@@ -24,7 +24,7 @@ function SearchBar() {
     }
 
     return (
-        <div className="form-group mb-4">
+        <div data-testid='search-bar' className="form-group mb-4">
             <input placeholder="Search for employee..." className="form-control" type='text' value={term} onChange={handleInput} />
         </div>
     )

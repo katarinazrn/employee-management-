@@ -14,7 +14,6 @@ function List() {
     const dispatch = useDispatch();
     const { fetchEmployees } = bindActionCreators(actionCreators, dispatch);
 
-
     useEffect(() => {
         fetchEmployees();
     }, [params.type]);
@@ -38,7 +37,7 @@ function List() {
     </ul>
 
     return (
-        <div>
+        <div data-testid='list' >
             <SearchBar />
             {content}
         </div>
